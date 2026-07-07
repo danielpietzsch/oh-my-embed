@@ -4,10 +4,12 @@ module OhMyEmbed
       # DeviantArt oembed documentation:
       # https://www.deviantart.com/developers/oembed
 
-      self.endpoint = 'http://backend.deviantart.com/oembed'
+      self.endpoint = 'https://backend.deviantart.com/oembed'
       self.schemes = [
         '//*.deviantart.com/art/*',
         '//deviantart.com/art/*',
+        '//*.deviantart.com/*/art/*',
+        '//deviantart.com/*/art/*',
         '//*.deviantart.com/*#/d*',
         '//deviantart.com/*#/d*',
         '//fav.me/*',

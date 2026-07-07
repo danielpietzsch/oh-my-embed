@@ -18,19 +18,19 @@ describe OhMyEmbed::Providers::Slideshare do
         expect(response.type).to eq :rich
 
         expect(response.provider_name).to eq 'SlideShare'
-        expect(response.provider_url).to eq 'http://www.slideshare.net'
+        expect(response.provider_url).to eq 'https://www.slideshare.net/'
 
         expect(response.url).to eq content_url
 
         expect(response.title).to eq 'Business Quotes for 2011'
 
         expect(response.author).to eq({
-          name: 'Harald Felgner (PhD)',
-          url: 'http://www.slideshare.net/haraldf',
+          name: 'Harald Felgner, PhD',
+          url: 'https://www.slideshare.net/haraldf',
         })
 
         expect(response.thumbnail).to eq({
-          url: '//cdn.slidesharecdn.com/ss_thumbnails/110103quotes2010-12-110103073149-phpapp01-thumbnail.jpg?cb=1294104671',
+          url: 'https://cdn.slidesharecdn.com/ss_thumbnails/110103quotes2010-12-110103073149-phpapp01-thumbnail.jpg?width=320&height=320&fit=bounds',
           width: 170,
           height: 128,
         })

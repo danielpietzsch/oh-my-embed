@@ -4,7 +4,7 @@ module OhMyEmbed
       # Slideshare oembed documentation:
       # http://de.slideshare.net/developers/oembed
 
-      self.endpoint = 'http://www.slideshare.net/api/oembed/2'
+      self.endpoint = 'https://www.slideshare.net/api/oembed/2'
       self.schemes = [
         '//slideshare.net/*/*',
         '//*.slideshare.net/*/*',

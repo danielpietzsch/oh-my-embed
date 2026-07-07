@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://backend.deviantart.com/oembed?format=json&url=http://fav.me/d2enxz7
+    uri: https://backend.deviantart.com/oembed?format=json&url=https://www.deviantart.com/rootwork/art/Sylvis-Portrait-Icon-1313561920
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Ruby/2.2.3
+      - Ruby/3.4.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,29 +23,34 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '604'
+      - '3560'
       Connection:
       - keep-alive
-      Cache-Control:
-      - max-age=180
       Date:
-      - Wed, 11 May 2016 14:08:59 GMT
-      Expires:
-      - Wed, 11 May 2016 14:11:59 GMT
+      - Tue, 07 Jul 2026 14:10:23 GMT
+      X-Backend:
+      - web_http_back
       Server:
       - Apache
+      Cache-Control:
+      - max-age=180
+      Expires:
+      - Tue, 07 Jul 2026 14:13:23 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3a3025640eaad9970531c0d9450c1606.cloudfront.net (CloudFront)
+      - 1.1 31f1d6f9a4e05bd522db88334d37b9c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DUS51-P1
       X-Amz-Cf-Id:
-      - VnKocR5x0lg8SelfMZVAXiVvRe1jVmYSZvifDQDJNxc-BG-MWy6BZw==
+      - PAc2Nq2sPa9emqJAsQSqPuBG38139ctdzlx-Jj688X9C2NsTmEnZ9A==
     body:
       encoding: ASCII-8BIT
-      string: '{"version":"1.0","type":"photo","title":"Cope","category":"Digital
-        Art > Drawings & Paintings > Illustrations > Conceptual","url":"http:\/\/orig03.deviantart.net\/3c1c\/f\/2009\/336\/4\/7\/cope_by_pachunka.jpg","author_name":"Pachunka","author_url":"http:\/\/Pachunka.deviantart.com","provider_name":"DeviantArt","provider_url":"http:\/\/www.deviantart.com","safety":"nonadult","pubdate":"2009-12-02T23:59:51-08:00","community":{"statistics":{"_attributes":{"views":1326,"favorites":5,"comments":5,"downloads":59}}},"copyright":{"_attributes":{"url":"http:\/\/Pachunka.deviantart.com","year":"2009","entity":"Pachunka"}},"width":"448","height":"672","imagetype":"jpg","thumbnail_url":"http:\/\/t10.deviantart.net\/nHw1FLNfxnT4ga1BPKmlV3V7h2E=\/fit-in\/300x900\/filters:no_upscale():origin()\/pre11\/dde3\/th\/pre\/f\/2009\/336\/4\/7\/cope_by_pachunka.jpg","thumbnail_width":300,"thumbnail_height":450,"thumbnail_url_150":"http:\/\/t08.deviantart.net\/vVG89JdVpkScdywi4UoX87Htfdg=\/fit-in\/150x150\/filters:no_upscale():origin()\/pre11\/dde3\/th\/pre\/f\/2009\/336\/4\/7\/cope_by_pachunka.jpg","thumbnail_url_200h":"http:\/\/t01.deviantart.net\/KOxWveFcueoTEaYgA_GBLfFMisg=\/300x200\/filters:fixed_height(100,100):origin()\/pre11\/dde3\/th\/pre\/f\/2009\/336\/4\/7\/cope_by_pachunka.jpg","thumbnail_width_200h":133,"thumbnail_height_200h":200}'
-    http_version: 
-  recorded_at: Wed, 11 May 2016 14:08:59 GMT
-recorded_with: VCR 3.0.1
+      string: '{"version":"1.0","type":"photo","title":"Sylvis, Portrait Icon","url":"https:\/\/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com\/f\/27474e73-8f61-4c82-98c7-3e59f34cea58\/dlq26v4-f0df0844-ccdb-4026-b1f5-7f40272fddcc.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8yNzQ3NGU3My04ZjYxLTRjODItOThjNy0zZTU5ZjM0Y2VhNTgvZGxxMjZ2NC1mMGRmMDg0NC1jY2RiLTQwMjYtYjFmNS03ZjQwMjcyZmRkY2MucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.22eXVt4yZppENCDR5jcx5FSS5KLCu0n9ISEHHjOoei8","author_name":"rootwork","author_url":"https:\/\/www.deviantart.com\/rootwork","provider_name":"DeviantArt","provider_url":"https:\/\/www.deviantart.com","safety":"nonadult","pubdate":"2026-03-24T16:02:00-07:00","community":{"statistics":{"_attributes":{"views":238360,"favorites":34,"comments":4,"downloads":0}}},"tags":"portrait,
+        digitalart, pixelart, characterdesign, originalcharacter, plants, anthro,
+        anthropomorphic, feathers, forest, greenhair, roses, sylvan, vines, forestfae,
+        iconcommission, portraiticon","copyright":{"_attributes":{"url":"https:\/\/www.deviantart.com\/rootwork","year":"2026","entity":"rootwork"}},"width":"380","height":"380","imagetype":"png","thumbnail_url":"https:\/\/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com\/f\/27474e73-8f61-4c82-98c7-3e59f34cea58\/dlq26v4-f0df0844-ccdb-4026-b1f5-7f40272fddcc.png\/v1\/fit\/w_300,h_380,q_70,strp\/sylvis__portrait_icon_by_rootwork_dlq26v4-300w.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzgwIiwicGF0aCI6Ii9mLzI3NDc0ZTczLThmNjEtNGM4Mi05OGM3LTNlNTlmMzRjZWE1OC9kbHEyNnY0LWYwZGYwODQ0LWNjZGItNDAyNi1iMWY1LTdmNDAyNzJmZGRjYy5wbmciLCJ3aWR0aCI6Ijw9MzgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.7sgaNbLwkMiQ9ATVUUwyviBvCiy2U3Ea1h5M7eqNwy0","thumbnail_width":300,"thumbnail_height":300,"thumbnail_url_150":"https:\/\/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com\/f\/27474e73-8f61-4c82-98c7-3e59f34cea58\/dlq26v4-f0df0844-ccdb-4026-b1f5-7f40272fddcc.png\/v1\/fit\/w_150,h_150,q_70,strp\/sylvis__portrait_icon_by_rootwork_dlq26v4-150.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzgwIiwicGF0aCI6Ii9mLzI3NDc0ZTczLThmNjEtNGM4Mi05OGM3LTNlNTlmMzRjZWE1OC9kbHEyNnY0LWYwZGYwODQ0LWNjZGItNDAyNi1iMWY1LTdmNDAyNzJmZGRjYy5wbmciLCJ3aWR0aCI6Ijw9MzgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.7sgaNbLwkMiQ9ATVUUwyviBvCiy2U3Ea1h5M7eqNwy0","thumbnail_url_200h":"https:\/\/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com\/f\/27474e73-8f61-4c82-98c7-3e59f34cea58\/dlq26v4-f0df0844-ccdb-4026-b1f5-7f40272fddcc.png\/v1\/fill\/w_200,h_200,q_70,strp\/sylvis__portrait_icon_by_rootwork_dlq26v4-200h.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzgwIiwicGF0aCI6Ii9mLzI3NDc0ZTczLThmNjEtNGM4Mi05OGM3LTNlNTlmMzRjZWE1OC9kbHEyNnY0LWYwZGYwODQ0LWNjZGItNDAyNi1iMWY1LTdmNDAyNzJmZGRjYy5wbmciLCJ3aWR0aCI6Ijw9MzgwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.7sgaNbLwkMiQ9ATVUUwyviBvCiy2U3Ea1h5M7eqNwy0","thumbnail_width_200h":200,"thumbnail_height_200h":200}'
+  recorded_at: Tue, 07 Jul 2026 14:10:23 GMT
+recorded_with: VCR 6.3.1
