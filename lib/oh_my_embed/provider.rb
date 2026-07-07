@@ -5,12 +5,10 @@ module OhMyEmbed
   ##
   # Provider
   class Provider
-    class_attribute :provider_name
     class_attribute :endpoint
     class_attribute :schemes
     class_attribute :custom_mapping
 
-    self.provider_name = nil
     self.endpoint = nil
     self.custom_mapping = {}
     self.schemes = []
@@ -74,7 +72,7 @@ module OhMyEmbed
               raise OhMyEmbed::ParseError.new(self.name, url, response.body)
             end
           else
-            raise OhMyEmbed::Error, "Unexpected response status #{response.code}"
+            raise OhMyEmbed::Error, "Unexpected response status #{response.code}: #{response.body.to_s.strip.truncate(300)}"
         end
 
       OhMyEmbed::Response.new(self, url, response_data)
@@ -99,7 +97,7 @@ module OhMyEmbed
         schema
       else
         schema = "(https:|http:)#{schema}" unless schema.start_with?('http')
-        Regexp.new("^#{schema.gsub('.', '\.').gsub('*', '(.*?)')}$", Regexp::IGNORECASE)
+        Regexp.new("^#{schema.gsub('.', '\.').gsub('?', '\?').gsub('*', '(.*?)')}$", Regexp::IGNORECASE)
       end
     end
 
@@ -108,6 +106,13 @@ module OhMyEmbed
     # @return [Hash]
     def self.mapping
       @_mapping ||= self.default_mapping.merge(self.custom_mapping)
+    end
+
+    # Set the provider name
+    #
+    # @param [String] name
+    def self.provider_name=(name)
+      @provider_name = name
     end
 
     # Get the provider name

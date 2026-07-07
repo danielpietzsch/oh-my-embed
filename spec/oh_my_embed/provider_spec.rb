@@ -40,6 +40,12 @@ describe OhMyEmbed::Provider do
       expect(result).to eq /^(https:|http:)\/\/(.*?)\.example\.com\/(.*?)$/i
       expect(result).to match 'https://rofl.example.com/yolo'
     end
+
+    it 'escapes question marks so query string schemes match literally' do
+      result = DummyProvider.regexify('//www.example.com/watch?v=*')
+      expect(result).to match 'https://www.example.com/watch?v=12345'
+      expect(result).not_to match 'https://www.example.com/watcv=12345'
+    end
   end
 
   describe '#fetch' do
@@ -81,6 +87,26 @@ describe OhMyEmbed::Provider do
       stub_request(:get, /^https:\/\/www\.example\.com\/api\/oembed/).to_return(body: '<yolo this="is xml">')
 
       expect{ DummyProvider.fetch('http://example.com/my/content') }.to raise_error OhMyEmbed::ParseError
+    end
+
+    it 'includes a truncated response body in the OhMyEmbed::ParseError message' do
+      stub_request(:get, /^https:\/\/www\.example\.com\/api\/oembed/).to_return(body: '<yolo this="is xml">' + ('x' * 400))
+
+      expect{ DummyProvider.fetch('http://example.com/my/content') }.to raise_error(OhMyEmbed::ParseError) do |error|
+        expect(error.message).to include '<yolo this="is xml">'
+        expect(error.message).not_to include 'x' * 400
+      end
+    end
+
+    it 'fails with an OhMyEmbed::Error including a truncated response body on an unexpected response status' do
+      body = 'This endpoint is deprecated, please migrate.' + ('y' * 400)
+      stub_request(:get, /^https:\/\/www\.example\.com\/api\/oembed/).to_return(status: [400, 'Bad Request'], body: body)
+
+      expect{ DummyProvider.fetch('http://example.com/my/content') }.to raise_error(OhMyEmbed::Error) do |error|
+        expect(error.message).to include 'Unexpected response status 400'
+        expect(error.message).to include 'This endpoint is deprecated, please migrate.'
+        expect(error.message).not_to include 'y' * 400
+      end
     end
   end
 

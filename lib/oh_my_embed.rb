@@ -55,7 +55,7 @@ module OhMyEmbed
 
   class ParseError < OhMyEmbed::Error # nodoc #
     def self.new(provider_name, url, data_string)
-      super("Parsing failed for content (#{data_string}); Provider: #{provider_name}; URL: #{url}")
+      super("Parsing failed for content (#{data_string.to_s.strip.truncate(300)}); Provider: #{provider_name}; URL: #{url}")
     end
   end
 end
