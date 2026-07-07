@@ -28,18 +28,21 @@ Or install it yourself as:
 
 - Youtube
 - Slideshare
-- Instagram
-- Twitter
-- Facebook (Posts)
-- Facebook (Videos)
+- Instagram (Meta Graph API oEmbed)
+- X (formerly Twitter)
+- Facebook Posts (Meta Graph API oEmbed)
+- Facebook Videos (Meta Graph API oEmbed)
 - Flickr
 - SoundCloud
 - Kickstarter
 - Spotify
 - Dailymotion
-- Viddler
 - Vimeo
 - DeviantArt
+
+Note: The Facebook and Instagram providers use Meta's Graph API oEmbed endpoints.
+Officially these require an access token, but they currently answer tokenless
+requests for public content. This is undocumented behavior and may break again.
 
 If you need some other providers feel free to add them via pull request or build it for your application only by using the `OhMyEmbed::Provider` base class.
 See the custom provider section for more informations.
