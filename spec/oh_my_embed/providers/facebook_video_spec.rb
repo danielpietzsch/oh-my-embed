@@ -8,6 +8,12 @@ describe OhMyEmbed::Providers::FacebookVideo do
     expect(provider.regex).to match content_url
   end
 
+  it 'matches modern watch and reel urls' do
+    expect(provider.regex).to match 'https://www.facebook.com/watch?v=10153231379946729'
+    expect(provider.regex).to match 'https://www.facebook.com/watch/?v=10153231379946729'
+    expect(provider.regex).to match 'https://www.facebook.com/reel/10153231379946729'
+  end
+
   describe 'fetching' do
     it 'returns a video response with required attributes' do
       VCR.use_cassette('facebook_videos') do
@@ -22,18 +28,14 @@ describe OhMyEmbed::Providers::FacebookVideo do
 
         expect(response.url).to eq content_url
 
+        # The Graph API oEmbed responses don't include title, author or thumbnail
         expect(response.title).to be nil
-
-        expect(response.author).to eq({
-          name: 'Facebook',
-          url: 'https://www.facebook.com/facebook/',
-        })
-
+        expect(response.author).to be nil
         expect(response.thumbnail).to be nil
 
         expect(response.embed[:html]).to be_a String
         expect(response.embed[:width]).to eq 500
-        expect(response.embed[:height]).to eq 281
+        expect(response.embed[:height]).to be nil
       end
     end
   end

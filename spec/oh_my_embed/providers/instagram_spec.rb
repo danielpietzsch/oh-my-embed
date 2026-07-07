@@ -2,10 +2,15 @@ require 'spec_helper'
 
 describe OhMyEmbed::Providers::Instagram do
   let(:provider) { OhMyEmbed::Providers::Instagram }
-  let(:content_url) { 'http://instagr.am/p/fA9uwTtkSN' }
+  let(:content_url) { 'https://www.instagram.com/p/fA9uwTtkSN/' }
 
   it 'the content_url matches the schema' do
     expect(provider.regex).to match content_url
+  end
+
+  it 'matches short and reel urls' do
+    expect(provider.regex).to match 'http://instagr.am/p/fA9uwTtkSN'
+    expect(provider.regex).to match 'https://www.instagram.com/reel/CzTWjU5K8Hl/'
   end
 
   describe 'fetching' do
@@ -18,20 +23,14 @@ describe OhMyEmbed::Providers::Instagram do
         expect(response.type).to eq :rich
 
         expect(response.provider_name).to eq 'Instagram'
-        expect(response.provider_url).to eq 'https://www.instagram.com'
+        expect(response.provider_url).to eq 'https://www.instagram.com/'
 
         expect(response.url).to eq content_url
 
-        expect(response.title).to eq 'Wii Gato (Lipe Sleep)'
-
-        expect(response.author).to eq({
-          name: 'diegoquinteiro',
-          url: 'https://www.instagram.com/diegoquinteiro',
-        })
-
-        expect(response.thumbnail[:url]).to be_a String
-        expect(response.thumbnail[:width]).to eq 640
-        expect(response.thumbnail[:height]).to eq 640
+        # The Graph API oEmbed responses don't include title, author or thumbnail
+        expect(response.title).to be nil
+        expect(response.author).to be nil
+        expect(response.thumbnail).to be nil
 
         expect(response.embed[:html]).to be_a String
         expect(response.embed[:width]).to eq 658

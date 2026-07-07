@@ -62,6 +62,73 @@ http_interactions:
         Zuckerberg besucht Berlin.\u003C/p>Posted by \u003Ca href=\"https://www.facebook.com/FacebookDeutschland/\">Facebook\u003C/a>
         on&nbsp;\u003Ca href=\"https://www.facebook.com/FacebookDeutschland/posts/10153796066380932\">Donnerstag,
         25. Februar 2016\u003C/a>\u003C/blockquote>\u003C/div>\u003C/div>","type":"rich","version":"1.0","url":"https://www.facebook.com/FacebookDeutschland/posts/10153796066380932","width":552}'
-    http_version: 
   recorded_at: Tue, 10 May 2016 17:27:30 GMT
-recorded_with: VCR 3.0.1
+- request:
+    method: get
+    uri: https://graph.facebook.com/v19.0/oembed_post?format=json&url=https://www.facebook.com/smexaminer/posts/10151817016204383
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby/3.4.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Host:
+      - graph.facebook.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"2b811eff709df4e70c895cf4a7c129822d0d4174"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Ad-Api-Version-Warning:
+      - The call has been auto-upgraded to v20.0 as v19.0 has been deprecated.
+      Access-Control-Allow-Origin:
+      - "*"
+      Facebook-Api-Version:
+      - v20.0
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Request-Id:
+      - A7KJxve6cLySbXxOUl8ysV0
+      X-Fb-Trace-Id:
+      - Fubz0SYbRd2
+      X-Fb-Rev:
+      - '1042742319'
+      X-Fb-Debug:
+      - Hgy6Bk/gPxU95Ired1qVCxmmXLk9hmZO7LjzFDQx+WCC6am2wr3EUPQIOP+NLio8QGxCpRWvcawgt9jW/zuplw==
+      Date:
+      - Tue, 07 Jul 2026 14:07:47 GMT
+      X-Fb-Connection-Quality:
+      - EXCELLENT; q=0.9, rtt=20, rtx=0, c=10, mss=1380, tbw=4573, tp=-1, tpl=-1,
+        uplat=235, ullat=0
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '459'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"provider_url":"https:\/\/www.facebook.com","provider_name":"Facebook","html":"\u003Cdiv
+        id=\"fb-root\">\u003C\/div>\n\u003Cscript async=\"1\" defer=\"1\" crossorigin=\"anonymous\"
+        src=\"https:\/\/connect.facebook.net\/de_DE\/sdk.js#xfbml=1&amp;version=v25.0\">\u003C\/script>\u003Cdiv
+        class=\"fb-post\" data-href=\"https:\/\/www.facebook.com\/smexaminer\/posts\/10151817016204383\"
+        data-width=\"552\">\u003C\/div>","type":"rich","version":"1.0","width":552}'
+  recorded_at: Tue, 07 Jul 2026 14:07:47 GMT
+recorded_with: VCR 6.3.1

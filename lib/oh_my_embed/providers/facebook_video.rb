@@ -2,13 +2,20 @@ module OhMyEmbed
   module Providers
     class FacebookVideo < OhMyEmbed::Provider
       # Facebook oembed documentation:
-      # https://developers.facebook.com/docs/plugins/oembed-endpoints
+      # https://developers.facebook.com/docs/plugins/oembed
+      # https://developers.facebook.com/docs/graph-api/reference/oembed-video
+      #
+      # Officially the Graph API oEmbed endpoints require an access token,
+      # but they currently answer tokenless requests for public content.
 
-      self.endpoint = 'https://www.facebook.com/plugins/video/oembed.json/'
+      self.endpoint = 'https://graph.facebook.com/v19.0/oembed_video'
       self.schemes = [
         '//www.facebook.com/*/videos/*',
         '//www.facebook.com/video.php?id=*',
         '//www.facebook.com/video.php?v=*',
+        '//www.facebook.com/watch?v=*',
+        '//www.facebook.com/watch/?v=*',
+        '//www.facebook.com/reel/*',
       ]
     end
   end
