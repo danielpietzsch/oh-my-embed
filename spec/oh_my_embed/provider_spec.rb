@@ -89,12 +89,12 @@ describe OhMyEmbed::Provider do
       expect{ DummyProvider.fetch('http://example.com/my/content') }.to raise_error OhMyEmbed::ParseError
     end
 
-    it 'includes a truncated response body in the OhMyEmbed::ParseError message' do
-      stub_request(:get, /^https:\/\/www\.example\.com\/api\/oembed/).to_return(body: '<yolo this="is xml">' + ('x' * 400))
+    it 'includes the full response body in the OhMyEmbed::ParseError message' do
+      body = '<yolo this="is xml">' + ('x' * 400)
+      stub_request(:get, /^https:\/\/www\.example\.com\/api\/oembed/).to_return(body: body)
 
       expect{ DummyProvider.fetch('http://example.com/my/content') }.to raise_error(OhMyEmbed::ParseError) do |error|
-        expect(error.message).to include '<yolo this="is xml">'
-        expect(error.message).not_to include 'x' * 400
+        expect(error.message).to include body
       end
     end
 
