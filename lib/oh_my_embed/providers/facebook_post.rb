@@ -8,7 +8,7 @@ module OhMyEmbed
       # Officially the Graph API oEmbed endpoints require an access token,
       # but they currently answer tokenless requests for public content.
 
-      self.endpoint = 'https://graph.facebook.com/v19.0/oembed_post'
+      self.endpoint = 'https://graph.facebook.com/v25.0/oembed_post'
       self.schemes = [
         '//www.facebook.com/*/posts/*',
         '//www.facebook.com/*/activity/*',

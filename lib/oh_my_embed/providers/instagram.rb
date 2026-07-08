@@ -7,7 +7,7 @@ module OhMyEmbed
       # Officially the Graph API oEmbed endpoints require an access token,
       # but they currently answer tokenless requests for public content.
 
-      self.endpoint = 'https://graph.facebook.com/v19.0/instagram_oembed'
+      self.endpoint = 'https://graph.facebook.com/v25.0/instagram_oembed'
       self.schemes = [
         '//instagr.am/p/*',
         '//instagram.com/p/*',
